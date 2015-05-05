@@ -11,6 +11,7 @@ Route::get('login/{provider}', ['uses' => 'SocialController@login']);
 // Create a controller:
 
 use CodeZero\OAuth\Contracts\Authenticator;
+use Illuminate\Routing\Controller;
 
 class SocialController extends Controller
 {
