@@ -81,7 +81,7 @@ With the `Authenticator` instance (`$auth`) you can call... Facebook (or Google,
 
     $details = $auth->request('facebook'); //=> Lower case!
 
-When you run `$auth->request()` you will first be redirected to the provider. You will need to grant or deny access to your personal information and then you will be redirected back to the page where you came from.
+When you run `$auth->request('provider')` you will first be redirected to the provider. You will need to grant or deny access to your personal information and then you will be redirected back to the page where you came from.
 
 **IMPORTANT:** You need to set your page as a valid callback URL in your App!
 
@@ -106,7 +106,7 @@ If access is granted, `$details` will be an instance of `ExtractorInterface` fro
 
 ### Redirect the users...
 
-When you get redirected back to your site after a succesfull request, you will notice that there is a token in the URL. This token can't be used twice, so if you would refresh the page an exception would be thrown...
+When you get redirected back to your site after a successful request, you will notice that there is a token in the URL. This token can't be used twice, so if you would refresh the page an exception would be thrown...
 
 Therefor, it might be wise to redirect your users somewhere after you're done.
 
@@ -150,7 +150,6 @@ The handle needs to match the ones that are used in [php-oauth's examples](https
 
 Just save your class somewhere, make sure it's being (auto)loaded and then reference it in your configuration array like so:
 
-
     'example' => [
         'key'    => '123',
         'secret' => '456',
@@ -160,7 +159,6 @@ Just save your class somewhere, make sure it's being (auto)loaded and then refer
         'provider_class' => 'ExampleProvider', //=> Your custom provider
     ],
 
-
 ## Examples
 
 Take a look at [examples](https://github.com/codezero-be/oauth/blob/master/examples).
@@ -169,6 +167,7 @@ Take a look at [examples](https://github.com/codezero-be/oauth/blob/master/examp
 
 - Add tests...
 - Add more providers...
+- Create storage driver for Laravel's Session...
 - Fix bugs (maybe... probably...) :)
 
 ## Testing
