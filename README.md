@@ -63,6 +63,10 @@ Add the ServiceProvider to the providers array in `config/app.php`:
         'CodeZero\OAuth\Laravel5\OAuthServiceProvider'
     ]
 
+Create `oauth-providers.php` to the `config` folder and add your configuration array, or simply publish and edit it:
+ 
+    php artisan config:publish codezero/oauth
+    
 Then you can "make" (or inject) a `Authenticator` instance anywhere in your app:
 
     $auth = \App::make('CodeZero\OAuth\Contracts\Authenticator');
